@@ -28,6 +28,29 @@ A simple PHP-based cashier application for Toko Tsabita.
 4. Vercel will automatically detect it's a PHP project
 5. Click "Deploy"
 
+## Troubleshooting Deployment Issues
+
+If you encounter issues with PHP runtime detection:
+
+1. Make sure you have a `composer.json` file in your project root
+2. Try specifying the PHP runtime explicitly in `vercel.json`:
+   ```json
+   {
+     "version": 2,
+     "builds": [
+       {
+         "src": "**/*.php",
+         "use": "@vercel/php"
+       }
+     ]
+   }
+   ```
+
+3. Test PHP functionality with these API endpoints after deployment:
+   - `/api/health` - Basic health check
+   - `/api/test` - PHP functionality test
+   - `/api/version` - PHP version information
+
 ## Default Login
 - Username: admin
 - Password: admin123

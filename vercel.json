@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.php",
+      "src": "**/*.php",
       "use": "@vercel/php"
     }
   ],
@@ -12,8 +12,16 @@
       "dest": "/api/health.php"
     },
     {
+      "src": "/api/test",
+      "dest": "/api/test.php"
+    },
+    {
+      "src": "/api/version",
+      "dest": "/api/version.php"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/index.php"
     }
   ]
 }
